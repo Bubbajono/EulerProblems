@@ -36,6 +36,26 @@ namespace GeneralMethods
         return IsMultipleOf(num, 2);
     }
 
+    bool IsPalindrome(int num)
+    {
+        std::string str = std::to_string(num);
+        int length = str.length();
+        int mid = ceil(length/2);
+        
+        char left, right;
+        for (int i = 0; i < mid; i++)
+        {
+            left = str[i];
+            right = str[length - i - 1];
+            if (left != right)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     std::vector<int> FindFactors(long int num)
     {
         std::vector<int> vec;
