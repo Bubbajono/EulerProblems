@@ -6,7 +6,7 @@
 class Euler_Q1
 {
     public:
-        Euler_Q1(int nMax);
+        Euler_Q1(int nMax = 1000);
 
 };  
 
