@@ -5,18 +5,23 @@
 #include "Euler_Q3.h"
 #include "Euler_Q4.h"
 #include "Euler_Q5.h"
+#include "Euler_Q6.h"
+#include "Euler_Q7.h"
+#include "Euler_Q8.h"
 using namespace std;
 using namespace GeneralMethods;
 
 int main(void)
 {
 
-    Euler_Q1 Q1;
-    Euler_Q2 Q2;
-    Euler_Q3 Q3;
-    Euler_Q4 Q4;
-    Euler_Q5 Q5;
-
+    // Euler_Q1 Q1;
+    // Euler_Q2 Q2;
+    // Euler_Q3 Q3;
+    // Euler_Q4 Q4;
+    // Euler_Q5 Q5;
+    // Euler_Q6 Q6;
+    // Euler_Q7 Q7;
+    Euler_Q8 Q8;
     return 0;
     
 }

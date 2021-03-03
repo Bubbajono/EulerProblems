@@ -16,6 +16,8 @@ namespace GeneralMethods
     std::vector<int> GenerateFibonnaci(int nMax);
     std::vector<int> GenerateFibonnaci(int nMax, int Threshold);
     void Print2DVec(std::vector<int> vec);
+    std::vector<std::vector<int>> ReadCharFileToArray(std::string fileName);
+    std::vector<int> Convert2DVecTo1DVec(std::vector<std::vector<int>> vec);
 }
 
 #endif

@@ -136,4 +136,44 @@ namespace GeneralMethods
 
     }
 
+    std::vector<std::vector<int>> ReadCharFileToArray(std::string fileName)
+    {
+        std::string line;
+        std::ifstream file(fileName);
+        std::vector<std::vector<int>> array;
+        if(file.is_open())
+        {
+            while ( std::getline (file,line) )
+            {
+                std::vector<int> row;
+                for (char i: line)
+                {
+                    if (std::isdigit(i))
+                    {
+                        row.push_back(i - 48); //ASCII Conversion
+                    }
+                }
+                array.push_back(row);
+            }
+            file.close();
+        }
+
+        return array;
+
+    }
+
+    std::vector<int> Convert2DVecTo1DVec(std::vector<std::vector<int>> vec)
+    {
+        std::vector<int> out;
+
+        for (std::vector<int> row : vec)
+        {
+            for (int val : row)
+            {
+                out.push_back(val);
+            }
+        }
+
+        return out;
+    }
 }
