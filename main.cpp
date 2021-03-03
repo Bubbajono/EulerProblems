@@ -8,6 +8,8 @@
 #include "Euler_Q6.h"
 #include "Euler_Q7.h"
 #include "Euler_Q8.h"
+#include "Euler_Q9.h"
+#include "Euler_Q10.h"
 using namespace std;
 using namespace GeneralMethods;
 
@@ -21,7 +23,9 @@ int main(void)
     // Euler_Q5 Q5;
     // Euler_Q6 Q6;
     // Euler_Q7 Q7;
-    Euler_Q8 Q8;
+    //Euler_Q8 Q8;
+    //Euler_Q9 Q9;
+    Euler_Q10 Q10;
     return 0;
     
 }
