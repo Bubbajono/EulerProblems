@@ -76,8 +76,14 @@ namespace GeneralMethods
     std::vector<int> FindFactors(long int num)
     {
         std::vector<int> vec;
-        
-        for (int i = 1; i < sqrt(num); i++)
+
+        if (num == 1)
+        {
+            vec.push_back(1);
+            return vec;
+        }
+
+        for (int i = 1; i < num; i++)
         {
             if (num % i == 0)
             {
@@ -86,6 +92,17 @@ namespace GeneralMethods
         }
 
         return vec;
+    }
+
+    long CountDivisors(int num)
+    {
+		long count = 0;
+		for (int i = 1; i <= sqrt(num); i++) 
+        {
+			if (num % i == 0)
+				count += 2;
+		}
+		return count;
     }
 
     std::vector<int> FindPrimeFactors(long int num)
@@ -269,5 +286,30 @@ namespace GeneralMethods
             file.close();
         }
         return CountNumbersInRow;
+    }
+
+    std::vector<int> GetTriangleNumbers (int nAmount)
+    {
+        std::vector<int> numbers;
+        for (int i = 1; i <= nAmount; i++)
+        {
+            numbers.push_back(i);
+        }
+
+        std::vector<int> vec;
+        int count = 1;
+        
+        while (count <= nAmount)
+        {
+            long sum = 0;
+            for (int i = 0; i < count; i++)
+            {
+                sum += numbers[i];
+            }
+            vec.push_back(sum);
+            count++;
+        }
+
+        return vec;
     }
 }

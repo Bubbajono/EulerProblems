@@ -12,6 +12,7 @@ namespace GeneralMethods
     bool IsEven(int num);
     bool IsPalindrome(int num);
     std::vector<int> FindFactors(long int num);
+    long CountDivisors(int num);
     std::vector<int> FindPrimeFactors(long int num);
     std::vector<int> GenerateFibonnaci(int nMax);
     std::vector<int> GenerateFibonnaci(int nMax, int Threshold);
@@ -21,6 +22,7 @@ namespace GeneralMethods
     std::vector<std::vector<int>> ReadCharFileToArray(std::string fileName, char delimiter);
     std::vector<std::vector<int> > TransposeVecVec(const std::vector<std::vector<int> > data);
     int GetCountNumbersInRowOfFile(std::string fileName,  char delimiter);
+    std::vector<int> GetTriangleNumbers (int nAmount);
 }
 
 #endif

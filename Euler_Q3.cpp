@@ -28,6 +28,6 @@ Euler_Q3::Euler_Q3(long int num)
 
     int result = vec[vec.size()-1];
 
-    cout<< "The largest prime factor of the number " + to_string(num) + "is: " + to_string(result) <<endl<<endl;
+    cout<< "The largest prime factor of the number " + to_string(num) + " is: " + to_string(result) <<endl<<endl;
 
 }
