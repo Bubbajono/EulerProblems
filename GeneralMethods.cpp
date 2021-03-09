@@ -179,6 +179,45 @@ namespace GeneralMethods
 
     }
 
+    std::vector<std::vector<int>> ReadCharFileToArray(std::string fileName, char delimiter)
+    {
+        std::string line;
+        std::ifstream file(fileName);
+        std::vector<std::vector<int>> array;
+        std::string grouping;
+        if(file.is_open())
+        {
+            while ( std::getline (file,line) )
+            {
+                std::vector<int> row;
+                for (char i: line)
+                {
+                    if (i == delimiter)
+                    {
+                        row.push_back(stoi(grouping));
+                        grouping = "";
+                    }
+                    if (i == '\r') //new line
+                    {
+                        row.push_back(stoi(grouping));
+                        grouping = "";
+                    }
+                    grouping += i;
+                }  
+                //Get last number of entire file
+                if (file.eof())
+                {
+                    row.push_back(stoi(grouping));
+                }      
+                array.push_back(row);
+            }
+            file.close();
+        }
+
+        return array;
+
+    }
+
     std::vector<int> Convert2DVecTo1DVec(std::vector<std::vector<int>> vec)
     {
         std::vector<int> out;
@@ -192,5 +231,43 @@ namespace GeneralMethods
         }
 
         return out;
+    }
+
+    std::vector<std::vector<int> > TransposeVecVec(const std::vector<std::vector<int> > data) 
+    {
+        //Assumes a square array
+        std::vector<std::vector<int> > result(data[0].size(), std::vector<int>(data.size()));
+        
+        for (std::vector<int>::size_type i = 0; i < data[0].size(); i++)
+        {
+            for (std::vector<int>::size_type j = 0; j < data.size(); j++) 
+            {
+                result[i][j] = data[j][i];
+            }
+        }
+
+        return result;
+    }
+
+    int GetCountNumbersInRowOfFile(std::string fileName, char delimiter)
+    {
+        std::string line;
+        std::ifstream file(fileName);
+        int CountNumbersInRow = 0;
+        if (file.is_open())
+        {
+            std::getline (file,line);
+            for (char i: line)
+            {
+                if (i == delimiter)
+                {
+                    CountNumbersInRow++;
+                }
+            }
+            //Last number
+            CountNumbersInRow++;
+            file.close();
+        }
+        return CountNumbersInRow;
     }
 }

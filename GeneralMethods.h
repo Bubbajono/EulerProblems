@@ -18,6 +18,9 @@ namespace GeneralMethods
     void Print2DVec(std::vector<int> vec);
     std::vector<std::vector<int>> ReadCharFileToArray(std::string fileName);
     std::vector<int> Convert2DVecTo1DVec(std::vector<std::vector<int>> vec);
+    std::vector<std::vector<int>> ReadCharFileToArray(std::string fileName, char delimiter);
+    std::vector<std::vector<int> > TransposeVecVec(const std::vector<std::vector<int> > data);
+    int GetCountNumbersInRowOfFile(std::string fileName,  char delimiter);
 }
 
 #endif
